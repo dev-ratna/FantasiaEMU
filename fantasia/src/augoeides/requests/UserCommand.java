@@ -86,7 +86,7 @@ public class UserCommand implements IRequest {
       String var15;
       int var17;
       if(cmd.equals("tfer")) {
-         var15 = params[2].toLowerCase().replaceAll("battleon", "faroff");
+         var15 = params[2].toLowerCase().replaceAll("faroff", "battleon");
          if(var15.contains("guildhall")) {
             var17 = ((Integer)user.properties.get("guildid")).intValue();
             countryCode = (String)user.properties.get("language");

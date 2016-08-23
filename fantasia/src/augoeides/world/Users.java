@@ -1253,7 +1253,8 @@ private static final BeanCreator<ConcurrentHashMap> userProperties = new BeanCre
       int addedHP = END * intHPperEND;
       int userHp = this.world.getHealthByLevel(userLevel);
       userHp += addedHP;
-      int userMp = this.world.getManaByLevel(userLevel) + WIS * intMPperWIS;
+      int userMp = 100;
+              //this.world.getManaByLevel(userLevel) + WIS * intMPperWIS;
       user.properties.put("hpmax", Integer.valueOf(userHp));
       user.properties.put("mpmax", Integer.valueOf(userMp));
       if(((Integer)user.properties.get("state")).intValue() == 1 || levelUp) {

@@ -27,6 +27,7 @@ public class FirstJoin implements IRequest {
         String roomName = "faroff";
         String roomFrame = "Enter";
         String roomPad = "Spawn";
+
         if (((Integer) user.properties.get("access")).intValue() <= 0) {
             roomName = "prison";
             roomFrame = "Enter";
