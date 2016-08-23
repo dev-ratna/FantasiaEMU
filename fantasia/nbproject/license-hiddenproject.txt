@@ -1,0 +1,8 @@
+<#if licenseFirst??>
+${licenseFirst}
+</#if>
+${licensePrefix}Nemesis Worlds: nEmulator
+${licensePrefix}Copyright © 2014 Nemesis Worlds Team
+<#if licenseLast??>
+${licenseLast}
+</#if>

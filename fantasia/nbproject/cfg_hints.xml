@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//NetBeans//DTD Tool Configuration 1.0//EN" "http://www.netbeans.org/dtds/ToolConfiguration-1_0.dtd">
+<configuration>
+    <tool kind="hints" type="text/x-java">
+        <node name="Javac_canUseDiamond">
+            <attribute name="enabled" value="false"/>
+        </node>
+        <node name="org.netbeans.modules.apisupport.hints.HelpCtxHint">
+            <attribute name="enabled" value="false"/>
+        </node>
+        <node name="org.netbeans.modules.java.hints.MultipleLoggers">
+            <attribute name="enabled" value="false"/>
+        </node>
+        <node name="EmptyStatements_DO_WHILE_LOOP">
+            <attribute name="enabled" value="false"/>
+        </node>
+        <node name="EmptyStatements_BLOCK">
+            <attribute name="enabled" value="false"/>
+        </node>
+        <node name="org.netbeans.modules.java.hints.AddOverrideAnnotation">
+            <attribute name="enabled" value="false"/>
+        </node>
+        <node name="AnnotationAsSuperInterface">
+            <attribute name="enabled" value="false"/>
+        </node>
+        <node name="EmptyStatements_FOR_LOOP">
+            <attribute name="enabled" value="false"/>
+        </node>
+        <node name="org.netbeans.modules.java.hints.jackpot.hintsimpl.LoggerStringConcat">
+            <attribute name="enabled" value="false"/>
+        </node>
+        <node name="Javac_canUseLambda">
+            <attribute name="enabled" value="false"/>
+        </node>
+        <node name="org.netbeans.modules.apisupport.hints.UseNbBundleMessages">
+            <attribute name="enabled" value="false"/>
+        </node>
+        <node name="Imports_DEFAULT_PACKAGE">
+            <attribute name="enabled" value="false"/>
+        </node>
+        <node name="Imports_EXCLUDED">
+            <attribute name="enabled" value="false"/>
+        </node>
+        <node name="org.netbeans.modules.java.hints.jdk.AnnotationProcessors.oGSA">
+            <attribute name="enabled" value="false"/>
+        </node>
+        <node name="org.netbeans.modules.java.hints.jdk.ConvertToARM">
+            <attribute name="enabled" value="false"/>
+        </node>
+        <node name="org.netbeans.modules.java.hints.finalize.CallFinalize">
+            <attribute name="enabled" value="true"/>
+        </node>
+        <node name="org.netbeans.modules.java.hints.jdk.IteratorToFor">
+            <attribute name="enabled" value="false"/>
+        </node>
+        <node name="Imports_SAME_PACKAGE">
+            <attribute name="enabled" value="false"/>
+        </node>
+        <node name="org.netbeans.modules.java.hints.bugs.BroadCatchBlock.broadCatch">
+            <attribute name="enabled" value="false"/>
+        </node>
+        <node name="org.netbeans.modules.java.hints.jdk.Tiny.containsForIndexOf">
+            <attribute name="enabled" value="false"/>
+        </node>
+        <node name="org.netbeans.modules.java.hints.LoggerNotStaticFinal">
+            <attribute name="enabled" value="false"/>
+        </node>
+        <node name="org.netbeans.modules.java.hints.finalize.FinalizeNotProtected">
+            <attribute name="enabled" value="true"/>
+        </node>
+        <node name="org.netbeans.modules.java.hints.jdk.UseSpecificCatch">
+            <attribute name="enabled" value="false"/>
+        </node>
+        <node name="org.netbeans.modules.java.hints.jdk.JoinCatches">
+            <attribute name="enabled" value="false"/>
+        </node>
+        <node name="EmptyStatements_WHILE_LOOP">
+            <attribute name="enabled" value="false"/>
+        </node>
+        <node name="Javac_DEPRECATED">
+            <attribute name="enabled" value="true"/>
+        </node>
+        <node name="Imports_UNUSED">
+            <attribute name="enabled" value="false"/>
+        </node>
+        <node name="org.netbeans.modules.java.hints.finalize.FinalizeDeclared">
+            <attribute name="enabled" value="true"/>
+        </node>
+        <node name="org.netbeans.modules.java.hints.jdk.ConvertToStringSwitch">
+            <attribute name="enabled" value="false"/>
+        </node>
+        <node name="org.netbeans.modules.java.hints.finalize.FinalizeDoesNotCallSuper">
+            <attribute name="enabled" value="true"/>
+        </node>
+        <node name="create-javadoc">
+            <attribute name="enabled" value="false"/>
+        </node>
+        <node name="error-in-javadoc">
+            <attribute name="enabled" value="false"/>
+        </node>
+        <node name="org.netbeans.modules.java.hints.threading.Tiny.canBeFinal">
+            <attribute name="enabled" value="false"/>
+        </node>
+    </tool>
+</configuration>
