@@ -30,7 +30,7 @@ public class DuelAccept implements IRequest {
          } else {
             if(userRequestedDuel.contains(Integer.valueOf(client.getUserId()))) {
                userRequestedDuel.remove(Integer.valueOf(client.getUserId()));
-               String roomNumber = "1v1-" + (new Random()).nextInt(99999);
+               String roomNumber = "arena-" + (new Random()).nextInt(99999);
                Room newRoom = world.rooms.createRoom(roomNumber);
                JSONObject b = new JSONObject();
                b.put("id", Integer.valueOf(user.getUserId()));

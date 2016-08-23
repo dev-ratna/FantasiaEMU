@@ -3,8 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/seano/Downloads/FoLemu/V3%20Source/src/augoeides/world/Users.java</file>
-            <file>file:/Users/seano/Downloads/FoLemu/V3%20Source/src/augoeides/requests/guild/ChangeGuildColor.java</file>
+            <file>file:/Users/seano/FantasiaEMU/fantasia/src/augoeides/requests/Message.java</file>
+            <file>file:/Users/seano/FantasiaEMU/fantasia/src/augoeides/world/Users.java</file>
+            <file>file:/Users/seano/FantasiaEMU/fantasia/src/augoeides/requests/UserCommand.java</file>
+            <file>file:/Users/seano/FantasiaEMU/fantasia/src/augoeides/requests/FirstJoin.java</file>
+            <file>file:/Users/seano/FantasiaEMU/fantasia/src/augoeides/requests/Action.java</file>
+            <file>file:/Users/seano/FantasiaEMU/fantasia/src/augoeides/requests/BuyBagSlots.java</file>
+            <file>file:/Users/seano/FantasiaEMU/fantasia/src/augoeides/requests/BuyBankSlots.java</file>
+            <file>file:/Users/seano/FantasiaEMU/fantasia/src/augoeides/requests/DuelAccept.java</file>
         </group>
     </open-files>
 </project-private>
