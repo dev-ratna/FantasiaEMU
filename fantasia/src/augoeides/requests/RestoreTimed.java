@@ -21,6 +21,7 @@ public class RestoreTimed implements IRequest {
       } else {
          world.users.log(user, "Packet Edit [RestoreTimed]", "Respawning when elapsed time is less than 8 seconds");
       }
+      world.rooms.basicRoomJoin(user, "battleon");
 
    }
 }

@@ -20,7 +20,7 @@ public class WarpUser implements Runnable {
 
       while(i$.hasNext()) {
          User user = (User)i$.next();
-         this.world.rooms.basicRoomJoin(user, "faroff");
+         this.world.rooms.basicRoomJoin(user, "battleon");
       }
 
    }

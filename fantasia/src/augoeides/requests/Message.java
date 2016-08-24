@@ -184,8 +184,12 @@ public class Message implements IRequest {
                     default:
                         channel = "zone";
                 }
+                if ((((Integer) user.properties.get("access")).intValue()) == 61) {
+                    world.sendToRoom(new String[]{"chatm", channel + "~" + message, "DaeX", String.valueOf(room.getId())}, user, room);
+                } else {
+                    world.sendToRoom(new String[]{"chatm", channel + "~" + message, user.getName(), String.valueOf(room.getId())}, user, room);
 
-                world.sendToRoom(new String[]{"chatm", channel + "~" + message, user.getName(), String.valueOf(room.getId())}, user, room);
+                }
             }
 
             world.applyFloodFilter(user, message);
