@@ -48,14 +48,14 @@ public class GetDrop implements IRequest {
                         return;
                      }
 
-                     world.db.jdbc.run("UPDATE users_items SET Quantity = ? WHERE ItemID = ? AND UserID = ?", new Object[]{Integer.valueOf(quantity + quantityToDrop), Integer.valueOf(itemId), user.properties.get("dbId")});
+                     world.db.jdbc.run("UPDATE users_items SET Quantity = ? WHERE ItemID = ? AND UserID = ?", new Object[]{Integer.valueOf(quantity + item.getQuantity()), Integer.valueOf(itemId), user.properties.get("dbId")});
                   } else if(item.getStack() == 1) {
                      world.db.jdbc.rollbackTransaction();
                      world.send(gd, user);
                      return;
                   }
                } else {
-                  world.db.jdbc.run("INSERT INTO users_items (UserID, ItemID, EnhID, Equipped, Quantity, Bank, DatePurchased) VALUES (?, ?, ?, 0, ?, 0, NOW())", new Object[]{user.properties.get("dbId"), Integer.valueOf(itemId), Integer.valueOf(item.getEnhId()), Integer.valueOf(quantityToDrop)});
+                  world.db.jdbc.run("INSERT INTO users_items (UserID, ItemID, EnhID, Equipped, Quantity, Bank, DatePurchased) VALUES (?, ?, ?, 0, ?, 0, NOW())", new Object[]{user.properties.get("dbId"), Integer.valueOf(itemId), Integer.valueOf(item.getEnhId()), Integer.valueOf(item.getQuantity())});
                   charItemId = Long.valueOf(world.db.jdbc.getLastInsertId()).intValue();
                }
 
@@ -63,7 +63,7 @@ public class GetDrop implements IRequest {
                if(charItemId > 0) {
                   gd.put("CharItemID", Integer.valueOf(charItemId));
                   gd.put("bBank", Boolean.valueOf(false));
-                  gd.put("iQty", Integer.valueOf(quantityToDrop));
+                  gd.put("iQty", Integer.valueOf(item.getQuantity()));
                   gd.put("bSuccess", "1");
                   if(!item.getReqQuests().isEmpty()) {
                      gd.put("showDrop", "1");

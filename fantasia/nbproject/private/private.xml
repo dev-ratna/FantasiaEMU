@@ -4,14 +4,13 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/Users/seano/FantasiaEMU/fantasia/src/augoeides/requests/Message.java</file>
+            <file>file:/Users/seano/FantasiaEMU/fantasia/src/augoeides/ui/MessageBox.java</file>
             <file>file:/Users/seano/FantasiaEMU/fantasia/src/augoeides/world/Users.java</file>
-            <file>file:/Users/seano/FantasiaEMU/fantasia/src/augoeides/requests/UserCommand.java</file>
-            <file>file:/Users/seano/FantasiaEMU/fantasia/src/augoeides/requests/FirstJoin.java</file>
-            <file>file:/Users/seano/FantasiaEMU/fantasia/src/augoeides/requests/Action.java</file>
-            <file>file:/Users/seano/FantasiaEMU/fantasia/src/augoeides/tasks/WarpUser.java</file>
-            <file>file:/Users/seano/FantasiaEMU/fantasia/src/augoeides/requests/BuyBagSlots.java</file>
-            <file>file:/Users/seano/FantasiaEMU/fantasia/src/augoeides/requests/BuyBankSlots.java</file>
-            <file>file:/Users/seano/FantasiaEMU/fantasia/src/augoeides/requests/DuelAccept.java</file>
+            <file>file:/Users/seano/FantasiaEMU/fantasia/src/augoeides/requests/GetDrop.java</file>
+            <file>file:/Users/seano/FantasiaEMU/fantasia/src/augoeides/ui/UserInterface.java</file>
+            <file>file:/Users/seano/FantasiaEMU/fantasia/src/augoeides/requests/ServerUseItem.java</file>
+            <file>file:/Users/seano/FantasiaEMU/fantasia/src/augoeides/requests/GetDrop1.java</file>
+            <file>file:/Users/seano/FantasiaEMU/fantasia/src/augoeides/requests/BuyItem.java</file>
         </group>
     </open-files>
 </project-private>
