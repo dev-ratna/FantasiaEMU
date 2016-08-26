@@ -381,7 +381,7 @@ public class Users {
             guild.put("Exp", Integer.valueOf(0));
             guild.put("ExpToLevel", Integer.valueOf(this.world.getGuildExpToLevel(newLevel)));
             this.world.sendGuildUpdate(guild);
-            this.world.db.jdbc.run("UPDATE guilds SET Level = ?, Exp = 0 WHERE id = ?", new Object[]{Integer.valueOf(newLevel), guildId});
+            this.world.db.jdbc.run("UPDATE guilds SET Level = ?, Experience = 0 WHERE id = ?", new Object[]{Integer.valueOf(newLevel), guildId});
             this.world.sendToGuild(levelUp, guild);
         }
 

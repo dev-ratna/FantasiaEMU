@@ -3,14 +3,24 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/seano/FantasiaEMU/fantasia/src/augoeides/requests/Message.java</file>
-            <file>file:/Users/seano/FantasiaEMU/fantasia/src/augoeides/ui/MessageBox.java</file>
-            <file>file:/Users/seano/FantasiaEMU/fantasia/src/augoeides/world/Users.java</file>
-            <file>file:/Users/seano/FantasiaEMU/fantasia/src/augoeides/requests/GetDrop.java</file>
-            <file>file:/Users/seano/FantasiaEMU/fantasia/src/augoeides/ui/UserInterface.java</file>
-            <file>file:/Users/seano/FantasiaEMU/fantasia/src/augoeides/requests/ServerUseItem.java</file>
-            <file>file:/Users/seano/FantasiaEMU/fantasia/src/augoeides/requests/GetDrop1.java</file>
+            <file>file:/Users/seano/FantasiaEMU/fantasia/src/augoeides/requests/Whisper.java</file>
+            <file>file:/Users/seano/FantasiaEMU/fantasia/src/augoeides/requests/customfunctions/GuildWars.java</file>
+            <file>file:/Users/seano/FantasiaEMU/fantasia/src/augoeides/requests/customfunctions/GuildWarsDecline.java</file>
+            <file>file:/Users/seano/FantasiaEMU/fantasia/src/augoeides/requests/DuelInvite.java</file>
+            <file>file:/Users/seano/FantasiaEMU/fantasia/src/augoeides/world/Rooms.java</file>
+            <file>file:/Users/seano/FantasiaEMU/fantasia/src/augoeides/requests/customfunctions/GuildWarsAccept.java</file>
+            <file>file:/Users/seano/FantasiaEMU/fantasia/src/augoeides/world/World.java</file>
+            <file>file:/Users/seano/FantasiaEMU/fantasia/src/augoeides/requests/Action.java</file>
+            <file>file:/Users/seano/FantasiaEMU/fantasia/src/augoeides/requests/FirstJoin.java</file>
+            <file>file:/Users/seano/FantasiaEMU/fantasia/src/augoeides/AugoEidEs.java</file>
+            <file>file:/Users/seano/FantasiaEMU/fantasia/src/augoeides/requests/DuelAccept.java</file>
+            <file>file:/Users/seano/FantasiaEMU/fantasia/src/augoeides/requests/DuelDecline.java</file>
             <file>file:/Users/seano/FantasiaEMU/fantasia/src/augoeides/requests/BuyItem.java</file>
+            <file>file:/Users/seano/FantasiaEMU/fantasia/src/augoeides/world/Users.java</file>
+            <file>file:/Users/seano/FantasiaEMU/fantasia/src/augoeides/requests/UserCommand.java</file>
+            <file>file:/Users/seano/FantasiaEMU/fantasia/src/augoeides/requests/customfunctions/Rebirth.java</file>
+            <file>file:/Users/seano/FantasiaEMU/fantasia/src/augoeides/requests/RetrieveInventory.java</file>
+            <file>file:/Users/seano/FantasiaEMU/fantasia/src/augoeides/requests/customfunctions/RedeemCode.java</file>
         </group>
     </open-files>
 </project-private>

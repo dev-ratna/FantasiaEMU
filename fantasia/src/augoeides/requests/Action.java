@@ -409,6 +409,7 @@ public class Action
                             world.users.die(var60);
                             user.properties.put("state", Integer.valueOf(1));
 
+                            /*
                             QueryResult isTournament = world.db.jdbc.query("SELECT * FROM tournament_settings WHERE ActiveTournament = 1", new Object[0]);
                             if (isTournament.next()) {
                                 int tournamentLeft = world.db.jdbc.queryForInt("SELECT TIMESTAMPDIFF(SECOND, NOW(), ?)", new Object[]{isTournament.getString("TournamentEnds")});
@@ -434,6 +435,7 @@ public class Action
                                 world.db.jdbc.run("UPDATE users SET KillCount = (KillCount + 1) WHERE id = ?", new Object[]{user.properties.get("dbId")});
                                 world.db.jdbc.run("INSERT INTO users_lastpvp (WinnerID, LosserID, Date) VALUES (?, ?, NOW())", new Object[]{user.properties.get("dbId"), var60.properties.get("dbId")});
                                 //world.rooms.basicRoomJoin(user, "battleon");
+
                                 QueryResult checkPVPtoken = world.db.jdbc.query("SELECT * FROM users_items WHERE UserID = ? AND ItemID = 247", new Object[]{user.properties.get("dbId")});
                                 if (checkPVPtoken.next()) {
                                     world.db.jdbc.run("UPDATE users_items SET Quantity = (Quantity + 1) WHERE ItemID = 247 AND UserID = ?", new Object[]{user.properties.get("dbId")});
@@ -441,6 +443,7 @@ public class Action
                                     world.db.jdbc.run("INSERT INTO users_items (ItemID, UserID, Equipped, Quantity, EnhID, Bank) VALUES ('247', ?, '0', '1','1957', 0", new Object[]{user.properties.get("dbId")});
                                 }
                             }
+                             */
                             if (area.isPvP()) {
                                 Iterator var76 = area.items.iterator();
                                 while (var76.hasNext()) {
@@ -449,21 +452,59 @@ public class Action
                                 }
                                 if (room.getName().split("-")[0].equals("guildwars")) {
                                     world.db.jdbc.run("UPDATE guilds SET TotalKills = (TotalKills + 1) WHERE id = ?", new Object[]{user.properties.get("guildid")});
-                                    world.db.jdbc.run("UPDATE guilds SET Exp = (Exp + 100) WHERE id = ?", new Object[]{user.properties.get("guildid")});
+                                    world.db.jdbc.run("UPDATE guilds SET Experience = (Experience + 100) WHERE id = ?", new Object[]{user.properties.get("guildid")});
                                     JSONObject var78 = world.users.getGuildObject(((Integer) user.properties.get("guildid")).intValue());
-                                    int var79 = world.db.jdbc.queryForInt("SELECT Exp FROM guilds WHERE id = ?", new Object[]{user.properties.get("guildid")});
+                                    int var79 = world.db.jdbc.queryForInt("SELECT Experience FROM guilds WHERE id = ?", new Object[]{user.properties.get("guildid")});
                                     int var81 = world.db.jdbc.queryForInt("SELECT TotalKills FROM guilds WHERE id = ?", new Object[]{user.properties.get("guildid")});
                                     var78.put("TotalKills", Integer.valueOf(var81 + 1));
                                     world.sendGuildUpdate(var78);
                                     if (var79 >= world.getGuildExpToLevel(((Integer) var78.get("Level")).intValue())) {
                                         world.users.guildLevelUp((Integer) user.properties.get("guildid"), ((Integer) var78.get("Level")).intValue() + 1);
                                     } else {
-                                        var78.put("Exp", Integer.valueOf(var79 + 100));
+                                        var78.put("Experience", Integer.valueOf(var79 + 100));
                                         world.sendGuildUpdate(var78);
                                     }
+                                    world.send(new String[]{"server", "The guild war has ended!"}, user);
                                 }
-                                if (room.getName().split("-")[0].equals("1v1")) {
-                                    world.rooms.addPvPScore(room, 1000, ((Integer) user.properties.get("pvpteam")).intValue());
+                                QueryResult isTournament = world.db.jdbc.query("SELECT * FROM tournament_settings WHERE ActiveTournament = 1", new Object[0]);
+
+                                if (room.getName().split("-")[0].equals("arena")) {
+                                    if (isTournament.next()) {
+                                        int tournamentLeft = world.db.jdbc.queryForInt("SELECT TIMESTAMPDIFF(SECOND, NOW(), ?)", new Object[]{isTournament.getString("TournamentEnds")});
+                                        tournamentLeft = tournamentLeft >= 0 ? tournamentLeft : 0;
+                                        if (tournamentLeft > 0) {
+                                            Random r = new Random();
+                                            int Points1 = 1;
+                                            int Points2 = 10;
+                                            int Result = r.nextInt(Points2 - Points1) + Points1;
+                                            int Points3 = 1;
+                                            int Points4 = 10;
+                                            int Result1 = r.nextInt(Points4 - Points3) + Points3;
+                                            world.send(new String[]{"server", "Congratulations! For winning you have received " + Result + " tournament points."}, user);
+                                            world.db.jdbc.run("UPDATE users SET DeathCount = (DeathCount + 1) WHERE id = ?", new Object[]{var60.properties.get("dbId")});
+                                            world.db.jdbc.run("UPDATE users SET KillCount = (KillCount + 1) WHERE id = ?", new Object[]{user.properties.get("dbId")});
+                                            world.db.jdbc.run("UPDATE users SET TournamentPoints = (TournamentPoints + " + Result + ") WHERE id = ?", new Object[]{user.properties.get("dbId")});
+                                            world.db.jdbc.run("UPDATE users SET TournamentPoints = (TournamentPoints - " + Result1 + ") WHERE id = ?", new Object[]{var60.properties.get("dbId")});
+                                            world.db.jdbc.run("INSERT INTO users_tournaments (WinnerID, LosserID, WinnerPoints, LosserPoints, Date) VALUES (?, ?, " + Result + ", " + Result1 + ", NOW())", new Object[]{user.properties.get("dbId"), var60.properties.get("dbId")});
+                                            //world.rooms.basicRoomJoin(user, "battleon");
+                                        }
+                                    } else {
+                                        world.db.jdbc.run("UPDATE users SET DeathCount = (DeathCount + 1) WHERE id = ?", new Object[]{var60.properties.get("dbId")});
+                                        world.db.jdbc.run("UPDATE users SET KillCount = (KillCount + 1) WHERE id = ?", new Object[]{user.properties.get("dbId")});
+                                        world.db.jdbc.run("INSERT INTO users_lastpvp (WinnerID, LosserID, Date) VALUES (?, ?, NOW())", new Object[]{user.properties.get("dbId"), var60.properties.get("dbId")});
+                                        //world.rooms.basicRoomJoin(user, "battleon");
+
+                                        QueryResult checkPVPtoken = world.db.jdbc.query("SELECT * FROM users_items WHERE UserID = ? AND ItemID = 247", new Object[]{user.properties.get("dbId")});
+                                        if (checkPVPtoken.next()) {
+                                            world.db.jdbc.run("UPDATE users_items SET Quantity = (Quantity + 1) WHERE ItemID = 247 AND UserID = ?", new Object[]{user.properties.get("dbId")});
+                                            world.send(new String[]{"server", "Congratulations! For winning you have received 1 PVP token!"}, user);
+
+                                        } else {
+                                            //world.db.jdbc.run("INSERT INTO users_items (ItemID, UserID, Equipped, Quantity, EnhID, Bank) VALUES ('247', ?, '0', '1','1957', 0", new Object[]{user.properties.get("dbId")});
+                                            world.db.jdbc.run("INSERT INTO users_items (UserID, ItemID, EnhID, Equipped, Quantity, Bank, DatePurchased) VALUES (?, 247, 1957, 0, 1, 0, NOW())", new Object[]{user.properties.get("dbId")});
+                                            world.send(new String[]{"server", "Congratulations! For winning you have received your first PVP token! Keep defeating players to get more PVP Tokens for special items in game!"}, user);
+                                        }
+                                    }
                                 } else {
                                     world.rooms.addPvPScore(room, ((Integer) var60.properties.get("level")).intValue(), ((Integer) user.properties.get("pvpteam")).intValue());
                                 }
