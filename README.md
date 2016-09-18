@@ -9,6 +9,8 @@ Features
 ----------
 
 * Tournaments
+* SFS DOS Protection
+* Custom SFS Library for Java 8
 * Duel Rewards
 * Guild Wars
 * Trade (Just needs to be written in client)
@@ -27,5 +29,6 @@ Credits
 -------
 
 - NxT Studios (Developer Framework)
+- Stas Darevskiy (Java 8 SFS Libraries)
 - Stellar Gaming (Hosting Company)
 - Jordan Maxwell (Buisness Partner)
