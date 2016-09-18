@@ -32,3 +32,9 @@ Credits
 - Stas Darevskiy (Java 8 SFS Libraries)
 - Stellar Gaming (Hosting Company)
 - Jordan Maxwell (Buisness Partner)
+
+
+-----
+Links
+-----
+* Fantasia Emulator Build, Database Structure, and Website files [here] (https://mega.nz/#F!IpkkkZDQ!fSsG1IutR_OXwHkLedUcMQ)
